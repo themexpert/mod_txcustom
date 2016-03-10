@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>mod_txcustom</name>
+	<author>Abu Huraira Bin Aman</author>
+	<creationDate>Oct 2015</creationDate>
+	<copyright>Copyright (C) 2005 - 2015 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>shams.bd71@gmail.com</authorEmail>
+	<authorUrl>www.themexpert.com</authorUrl>
+	<version>1.0.1</version>
+	<description>MOD_TXCUSTOM_XML_DESCRIPTION</description>
+	
+	<files>
+		<filename module="mod_txcustom">mod_txcustom.php</filename>
+		<folder>fields</folder>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+		<filename>helper.php</filename>
+		<filename>LICENSE</filename>
+		<filename>README.md</filename>
+	</files>
+
+	<media folder="media" destination="mod_txcustom">
+		<folder>fontawesome</folder>
+		<folder>css</folder>
+		<folder>js</folder>
+	</media>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB.mod_txcustom.ini</language>
+		<language tag="en-GB">en-GB.mod_txcustom.sys.ini</language>
+	</languages>
+
+	<help key="JHELP_EXTENSIONS_MODULE_MANAGER_SEARCH" />
+
+	<config>
+		<fields name="params" addfieldpath="modules/mod_txcustom/fields">
+			<fieldset name="basic" >
+				<field type="txhidden"/>
+			</fieldset>
+			<!--  addfieldpath="media/xpert_assets/fields" -->
+			<fieldset name="basic">
+
+				<field name="name" label="Title" class="input-xxlarge input-large-text" type="text" required="true" />
+				<field name="show_name" type="radio" default="0" label="Show Title"
+					description="Show title" class="btn-group">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="source" type="radio" default="" label="Media Source"
+					description="Select source to show media" class="btn-group">
+					<option value="">None</option>
+					<option value="icon">Icon</option>
+					<option value="image">Image</option>
+					<option value="video">Video</option>
+				</field>
+
+				<field name="icon" type="faselector" label="Select Icon" description="Select font awosome icon">
+					<option value="fa-lg">Lg</option>
+					<option value="fa-2x">2x</option>
+					<option value="fa-3x">3x</option>
+					<option value="fa-4x">4x</option>
+					<option value="fa-5x">5x</option>
+				</field>
+
+				<field name="image" type="media" label="Select Image" description="Select image" />
+
+				<field name="video" type="textarea" label="Video Link" description="Video link iframe" class="input-xxlarge" filter="raw"/>
+				<field name="video_prev" type="media" label="Video Preview" description="Select image for Video Preview" />
+
+				<field name="media_position" type="radio" default="top" label="Media Position" description="Position of the icon, image or video" class="btn-group">
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="media_align" type="radio" default="left" label="Media Align" description="Align of the icon, image or video" class="btn-group">
+					<option value="left">Left</option>
+					<option value="right">Right</option>
+					<option value="center">Center</option>
+				</field>
+
+				<field name="media_class" label="Media Class" type="text" />
+
+				<field name="description" label="Description" type="editor" filter="safeHtml" />
+
+				<field name="description_class" label="Content Class" type="text" />
+
+				<field name="show_link" type="radio" default="0" label="Show Button Link"
+					description="Show link button" class="btn-group">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="link" type="text" label="Link" description="Link" class="input-xxlarge"/>
+				<field name="link_label" type="text" label="Link Label" description="Link text" class="input-xxlarge"/>
+				<field name="link_class" type="text" label="Link Class" description="Link Class" class="input-md"/>
+
+
+			</fieldset>
+			
+			<fieldset name="assets" >
+				<field name="load_font_awosome" type="radio" default="0" label="LOAD_FONT_AWOSOME_LABEL"
+					description="LOAD_FONT_AWOSOME_DESC" class="btn-group">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+
+			<fieldset
+				name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid">
+					<option
+						value="itemid"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
