@@ -1,4 +1,4 @@
-# Xpert Custom Field
+# Xpert Custom Module
 Its a module to reduce the effort of a Joomla users from HTML.
 We use custom html module for many purposes and sometime its need to be html structred to get the style.
 
