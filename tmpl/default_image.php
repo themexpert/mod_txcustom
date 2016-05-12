@@ -10,5 +10,5 @@
 defined('_JEXEC') or die;
 ?>
 <div class="image-wrapper<?php echo $media_class . ' ' . $media_wrap_class; ?>">
-  <img src="<?php echo $image; ?>" alt="<?php $name; ?>" />
+  <img src="<?php echo $image; ?>" alt="<?php $name; ?>" <?php ($media_align != 'center' ? 'class="img-responsive" ' : ''); ?>/>
 </div>

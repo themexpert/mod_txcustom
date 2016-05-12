@@ -18,10 +18,12 @@ $link_label = $params->get('link_label');
   
   <div class="content-wrapper <?php echo $description_class;?>">
     <div class="content-inner">
-
+      <?php if($show_name): ?>
       <h4>
         <?php echo $name . (isset($name2) ? ' <span>'.$name2.'</span>' : '');?>
       </h4>
+      <?php endif; ?>
+      
       <div class="content-desc">
         <?php echo $description;?>
 
